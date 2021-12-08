@@ -41,6 +41,9 @@ public class IniciarSesion extends JFrame {
 
 	/**
 	 * Create the frame.
+	 * @param listaJugadores la lista de todos los jugadores
+	 * @param listaTecnicos la lista de todos los tecnicos 
+	 * @param principio la ventana principio
 	 */
 	public IniciarSesion(ArrayList<Jugador> listaJugadores, ArrayList<Tecnico> listaTecnicos, Principio principio) 
 	{
@@ -94,6 +97,24 @@ public class IniciarSesion extends JFrame {
 					
 					boolean encontradoPersona = comprobarPersona (user, password, listaJugadores, listaTecnicos);
 					
+					if(encontradoPersona) {
+						
+						if(jugador.getTipopersona().equals("jugador")) {
+							
+							VentanaJugador ventana = new VentanaJugador();
+							ventana.setVisible(true);
+							IniciarSesion.this.dispose();
+							
+						} else if (jugador.getTipopersona().equals("tecnico")) {
+							
+							VentanaTecnico ventanatec = new VentanaTecnico();
+							ventanatec.setVisible(true);
+							IniciarSesion.this.dispose();
+							
+						}
+							
+					}
+					
 					
 					
 				} catch (UsuarioNoExiste e) {
@@ -108,7 +129,7 @@ public class IniciarSesion extends JFrame {
 		
 	}
 	
-	private boolean comprobarPersona(String usuario, String password, ArrayList<Jugador> listaJugadores, ArrayList<Tecnico> listaTecnicos)
+	public  boolean comprobarPersona(String usuario, String password, ArrayList<Jugador> listaJugadores, ArrayList<Tecnico> listaTecnicos)
 			throws UsuarioNoExiste 
     {
 

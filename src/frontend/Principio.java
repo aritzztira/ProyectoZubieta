@@ -58,10 +58,10 @@ public class Principio extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		JLabel foto = new JLabel("New label");
-		foto.setIcon(new ImageIcon("images/Deusto.jpg"));
-		foto.setBounds(15, 16, 398, 176);
-		contentPane.add(foto);
+//		JLabel foto = new JLabel("New label");
+//		foto.setIcon(new ImageIcon("images/Deusto.jpg"));
+//		foto.setBounds(15, 16, 398, 176);
+//		contentPane.add(foto);
 
 		JButton btnInicio = new JButton("Iniciar sesión");
 		btnInicio.addActionListener(new ActionListener() {
